@@ -15,7 +15,15 @@ A simple change that generates more variables is to consider the order $x_1, x_4
     \includegraphics[width=0.3\textwidth]{../images/BN_Q9_2.png}
 \end{figure}
 When $x_3$ is inserted, no subset of $\{x_4, x_1\}$ d-separates it from the other vertex. When $x_2$ is now added, in the absence of $x_5$, it cannot be d-separated from $x_4$ by $x_1, x_3$ (note that due to monotonicity of d-separation in Markov networks, we do not need to separately consider subsets of $\{x_1, x_3\}$). $x_5$ needs to be connected with both its neighbours, and also with $x_3$ since $\{x_2, x_4\}$ does not d-separate it from $x_3$. $x_6$ has to be connected to all its neighbours, who form a Markov blanket.\\
-In total, this approach created 10 directed edges.
+In total, this approach created 10 directed edges.\\
+
+In fact, note that one particular ordering gave me a directed graph with 13 nodes as the minimal BN which is an I-map for this Markov Network. That ordering was $x_1, x_4, x_6, x_3, x_2, x_5$.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{../images/BN_Q9_3.png}
+\end{figure}
+
+This is provably the largest number of edges that a minimal and correct BN for this Markov network can have, since the last vertex we add need only be connected to its neighbours, hence the largest number of possible edges is $\frac{6\cdot 5}{2} - 2 = 13$.
 
 \subsection{Part c}
 $x_3 \independent x_5 | x_2, x_6$ and $x_5 \independent x_1 | x_2, x_4$ are two CIs that hold in H but not in G (since $x_3$ and $x_5$, $x_5$ and $x_1$ now have edges between them in G, but were d-separated from each other by an appropriate set of vertices in H).\\
