@@ -1,0 +1,17 @@
+\section{Question 5}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{../images/BN_Q5.png}
+\end{figure}
+\section{Question 6}
+\begin{align}
+    x_4\independent x_3, x_1 | x_2 & \text{(given)}\label{eq:q6_1}\\
+    x_4\independent x_3 | x_1, x_2 & \text{(Weak Union)}\label{eq:q6_2}\\
+    x_3 \independent x_2 | x_1 & \text{(given)}\label{eq:q6_3}\\ 
+    x_3 \independent x_4, x_2 | x_1 & \text{(Contraction on \ref{eq:q6_2} and \ref{eq:q6_3})}\label{eq:q6_4}\\
+    x_3 \independent x_4 | x_1 & \text{(Decomposition)}\label{eq:q6_5}\\
+    x_4 \independent x_1 | x_2 & \text{(Decomposition on \ref{eq:q6_1})}\label{eq:q6_6}\\
+    x_1 \independent x_2 & \text{(given)}\label{eq:q6_7}\\
+    x_1 \independent x_4 & \text{(Contraction on \ref{eq:q6_6} and \ref{eq:q6_7})}\label{eq:q6_8}\\
+    x_4 \independent x_3 & \text{(Contraction on \ref{eq:q6_5} and \ref{eq:q6_8})}\label{eq:q6_9}
+\end{align}

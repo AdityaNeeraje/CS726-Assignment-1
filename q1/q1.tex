@@ -1,0 +1,17 @@
+\section{Question 1}
+Without loss of generality, assume the $x_i$ are topologically ordered (from ancestors to descendants w.r.t to the DAG). This assumption can be done because the only difference in the formula made by permuting the indices by a permutation $\psi$ is that $\pi_i$ is replaced by some $\pi_i'$ obtained by applying the permutation $\psi$ to the set of parents of $x_i$.\\
+Now, by factorizing the joint distribution as per the DAG, we get:
+\begin{align*}
+    P(x_1,\cdots x_{n-1})&=\sum_{x_1,\cdots x_{n-1}} P(x_1,\cdots x_{n-1})\\
+    &=\prod_{i=1}^{n-1} f_i(x_i, x_{\pi_i})\cdot \left(\sum_{x_n} f_n(x_n, x_{\pi_n})\right)\\
+    &=\prod_{i=1}^{n-1} f_i(x_i, x_{\pi_i})
+\end{align*}
+Proceeding inductively, we can observe:
+\begin{align*}
+    P(x_1,\cdots x_j)&=\prod_{i=1}^j f_i(x_i, x_{\pi_i})\cdot \prod_{i=j+1}^n \left(\sum_{x_i} f_i(x_i, x_{\pi_i})\right)\\
+    &=\prod_{i=1}^j f_i(x_i, x_{\pi_i})\cdot \prod_{i=j+1}^n 1\\
+    &=\prod_{i=1}^j f_i(x_i, x_{\pi_i})
+\end{align*}
+Thus, $P(x_i|\{x_1,\ldots, x_{i-1}\}) = \frac{P(x_1,\ldots, x_i)}{P(x_1,\ldots, x_{i-1})} = f_i(x_i, x_{\pi_i})$\\
+However, by the fact that P factorizes over the given DAG, $P(x_i|\{x_1,\ldots, x_{i-1}\}) = P(x_i|x_{\pi_i})$\\
+Thus, $f_i(x_i, x_{\pi_i}) = P(x_i|x_{\pi_i})$\\

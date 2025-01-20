@@ -1,0 +1,6 @@
+\section{Question 7}
+Given that $Pa(x_i)$ and $Pa(x_j)$ are observed, notice that no path emerging out of $x_i$ in the direction of one of its parents can be active (since the edge is directed towards $x_i$, the parent is not the center of a v-structure, and is observed, hence the parent is blocked).\\
+Thus, any active path must come out of $x_i$ towards one of its children. If we consider this path to keep going downwards in the graph until some node $x_k$ which it enters from a parent of $x_k$ and exits via another parent of $x_k$. Since $x_k$ is the center of a v-structure, it has to be an ancestor of $Pa(x_j)$ (since if it was an ancestor of $Pa(x_i)$ and also a descendant of $x_i$, the graph would no longer be a DAG.)\\
+Thus, $x_j$ is a descendant of $x_k$ and $x_k$ is a descendant of $x_i$. Thus, $x_j$ is a descendant of $x_i$.\\
+By the same argument with $x_i$ and $x_j$ swapped, $x_i$ is a descendant of $x_j$. Thus, $x_i$ and $x_j$ are descendants of each other.\\
+This is not possible in a DAG. 

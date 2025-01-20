@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[includefoot,bottom=12pt]{geometry}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{bbm}
+\usepackage{tikz}
+
+\geometry{left=1.25in}
+
+\pagestyle{fancy}
+% \fancyhead{}
+% \fancyfoot{}
+
+\makeatletter
+\newcommand*{\centernot}{%
+  \mathpalette\@centernot
+}
+\def\@centernot#1#2{%
+  \mathrel{%
+    \rlap{%
+      \settowidth\dimen@{$\m@th#1{#2}$}%
+      \kern.5\dimen@
+      \settowidth\dimen@{$\m@th#1=$}%
+      \kern-.5\dimen@
+      $\m@th#1\not$%
+    }%
+    {#2}%
+  }%
+}
+\makeatother
+
+\newcommand{\independent}{\perp\mkern-9.5mu\perp}
+\newcommand{\notindependent}{\centernot{\independent}}
+
+\fancyhead[R]{Neeraje - 23B0940}
+\fancyhead[L]{\leftmark}
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+
+\title{AML Assignment-1}
+
+\author{Aditya Neeraje}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\pagenumbering{gobble}
+
+\newpage
+
+\pagenumbering{arabic}
+\input{../q1/q1}
+\input{../q2/q2}
+\input{../q3/q3}
+\input{../q4/q4}
+\input{../q5/q5}
+\input{../q7/q7}
+\input{../q8/q8}
+\input{../q9/q9}
+
+\end{document}
